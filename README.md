@@ -52,8 +52,8 @@ Before you begin, ensure you have:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/quote-vault.git
-cd quote-vault
+git clone https://github.com/Xdiad47/QuoteVault.git
+cd QuoteVault
 ```
 
 ### Step 2: Install Dependencies
@@ -297,7 +297,7 @@ Choose your target device (Android emulator, iOS simulator, or physical device).
 ## 📁 Project Structure
 
 ```
-quote_vault/
+QuoteVault/
 ├── lib/
 │   ├── config/
 │   │   ├── supabase_config.dart.example  # Template (in GitHub)
@@ -368,21 +368,22 @@ Login Success → Session saved → Auto-redirect on app restart
 - Quotes are fetched from PostgreSQL database
 - Session persists using Supabase `persistSession`
 
-## 🤖 AI Tools Used
+## 🤖 Development Approach
 
-This project leveraged AI-assisted development for faster iteration:
+This project was built using modern AI-assisted development practices to accelerate iteration and maintain code quality:
 
-| Tool | Purpose | Usage |
-|------|---------|-------|
-| **ChatGPT** | Architecture design, code generation | 70% of initial code |
-| **GitHub Copilot** | Code completion, boilerplate | 20% productivity boost |
-| **Claude AI** | Debugging, refactoring | Problem-solving |
+### AI Tools Integration
 
-### Example AI Workflow:
-1. **Prompt**: "Create Flutter login screen with email validation using Provider"
-2. **AI Output**: Complete widget code with form validation
-3. **Developer**: Customize UI, integrate with backend
-4. **Test & Iterate**
+| Tool | Purpose | Impact |
+|------|---------|--------|
+| **ChatGPT & Claude** | Architecture design, code generation, debugging | Rapid prototyping |
+| **GitHub Copilot** | Code completion, boilerplate generation | Enhanced productivity |
+| **AI Code Review** | Bug detection, optimization suggestions | Code quality |
+
+### Development Workflow
+- AI-generated boilerplate with human refinement
+- Iterative testing and manual code review
+- Focus on business logic while AI handles repetitive patterns
 
 ## 🐛 Troubleshooting
 
@@ -448,7 +449,7 @@ flutter run
 - [x] Pull to refresh
 - [x] MVVM architecture
 
-### ⏳ Pending/Future Enhancements
+### 🚧 Future Enhancements
 - [ ] Push notifications for daily quote
 - [ ] Custom collections management
 - [ ] Widget for home screen
@@ -456,22 +457,22 @@ flutter run
 - [ ] Font size customization
 - [ ] Offline mode with local caching
 - [ ] Quote submission by users
+- [ ] Social features (share to feed, comments)
 
-## 🔒 Security Notes
+## 🔒 Security & Best Practices
 
-**⚠️ IMPORTANT FOR PRODUCTION:**
+**Security Measures:**
 
-This setup uses the Supabase **anon public key**, which is safe for client-side apps. However:
+1. **Row Level Security (RLS)** enabled on all tables
+2. **Supabase anon key** is client-safe (server validates permissions)
+3. **Config file gitignored** to prevent credential exposure
+4. **User data isolation** - users can only access their own favorites
 
-1. **Never commit** `supabase_config.dart` to GitHub (already in `.gitignore`)
-2. **Row Level Security (RLS)** is enabled to protect user data
-3. For production apps, consider using environment variables
-4. Rotate keys if accidentally exposed
-
-**What's Protected by RLS:**
-- Users can only see/modify their own favorites
-- Users can only access their own collections
-- All users can read quotes (public data)
+**Code Quality:**
+- MVVM architecture for separation of concerns
+- Provider for reactive state management
+- Error handling with try-catch blocks
+- Consistent naming conventions
 
 ## 📄 Dependencies
 
@@ -495,27 +496,41 @@ dependencies:
 - [Provider State Management](https://pub.dev/packages/provider)
 - [MVVM in Flutter](https://medium.com/flutter-community/mvvm-in-flutter-edd212fd767a)
 
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Xdiad47/QuoteVault/issues).
+
 ## 📄 License
 
-This project is created for educational purposes as part of a mobile development assignment.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
-**[Your Name]**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+**Diadem Nath**
+
+Senior Mobile App Developer | Flutter & Native Android/iOS Specialist
+
+- 🌐 GitHub: [@Xdiad47](https://github.com/Xdiad47)
+- 💼 LinkedIn: [Diadem Nath](https://www.linkedin.com/in/diadem-nath-a5396152/)
+- 📧 Email: [mail2diadem@gmail.com](mailto:mail2diadem@gmail.com)
+- 💻 Portfolio: [More Projects](https://github.com/Xdiad47?tab=repositories)
+
+### About Me
+5+ years of experience building production-ready mobile applications using Flutter, Kotlin, and Swift. Passionate about clean architecture, user experience, and leveraging AI tools to accelerate development.
 
 ## 🙏 Acknowledgments
 
-- Flutter team for the amazing framework
-- Supabase for free backend infrastructure
-- Quote authors for inspiration
-- AI tools (ChatGPT, GitHub Copilot) for accelerating development
-- [Your instructor name] for guidance
+- Flutter and Dart teams for the incredible framework
+- Supabase for providing free, powerful backend infrastructure
+- The open-source community for amazing packages
+- All the quote authors for their wisdom and inspiration
+
+## ⭐ Show Your Support
+
+If you found this project helpful or interesting, please consider giving it a star! It helps others discover the project.
 
 ---
 
-**📌 Note for Evaluators**: This app demonstrates modern Flutter development practices including MVVM architecture, cloud integration, and AI-assisted coding workflows. The configuration file is gitignored for security - please use your own Supabase credentials to test.
+**Built with ❤️ using Flutter, Supabase, and AI-assisted development**
 
-**Made with ❤️ using Flutter and AI assistance**
+*QuoteVault - Discover, Save, Share Inspiration*
